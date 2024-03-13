@@ -169,8 +169,6 @@ display(reference.show('.v'))
 
 
 ## Stuttering Simulation
-The following code is an extremely simplistic implementation of the Basic Stuttering Simulation Algorithm _BasicSSA_[1]. It basically partitions all the states that have the same labelling, and from here, the refinement of pairs is performed. For the sake of simplification, for this prototype, we categorise all states _x_ that simulates _y_ those in where the stuttering condition is part of the label and they don't modify the output behavior. Then we extract this model in AIGER format and perform equivalence checking between this model and the reference model, which does not accept stuttering (sleep) states.
-
 In this section, we present a simplified implementation of the Basic Stuttering Simulation Algorithm (BasicSSA) [1] to compare the Q-channel protocol models with and without sleep states. The algorithm begins by partitioning all states that share the same labeling, forming the initial sets for refinement.
 
 Let $S$ and $T$ denote the set of states in the models without and with sleep states, respectively. We define the labeling function $L$ that maps each state to its corresponding set of atomic propositions. The initial partition $P_0$ is formed by grouping states with identical labels, i.e., $P_0 = {{s ∈ S ∪ T | L(s) = L(t)} | t ∈ S ∪ T}$.
